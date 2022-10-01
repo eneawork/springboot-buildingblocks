@@ -44,8 +44,7 @@ public class UserMappingJacksonController {
             fields.add("ssn");
             fields.add("orders");
 
-            FilterProvider filterProvider = new SimpleFilterProvider().addFilter("userFilter",
-                    SimpleBeanPropertyFilter.filterOutAllExcept(fields));
+            FilterProvider filterProvider = new SimpleFilterProvider().addFilter("userFilter", SimpleBeanPropertyFilter.filterOutAllExcept(fields));
             MappingJacksonValue mapper = new MappingJacksonValue(user);
 
             mapper.setFilters(filterProvider);
