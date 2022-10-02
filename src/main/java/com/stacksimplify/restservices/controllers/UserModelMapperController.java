@@ -23,8 +23,11 @@ public class UserModelMapperController {
     @Autowired
     private UserService userService;
 
-    @Autowired
     private ModelMapper modelMapper;
+
+    public UserModelMapperController() {
+        this.modelMapper = new ModelMapper();
+    }
 
     @GetMapping("/{id}")
     public UserMmDto getUserById(@PathVariable("id") @Min(1) Long id) throws UserNotFoundException {
